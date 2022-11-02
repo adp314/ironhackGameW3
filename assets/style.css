@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: row;
+    padding: 100px;
+    background-color: #D9D9D9;
+    justify-content: space-around;
+    
+}
+
+.right-container{
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid;
+}
+
+.right-container h1{
+    text-align: center;
+    font-size: 2rem;
+}
+.tutorial{
+    text-align: center;
+    margin-top: 10px;
+    width: 300px;
+    font-size: 1.2rem;
+    background-color: white;
+    padding: 20px;
+    border-radius: 3px;
+}
+
+#board td{
+    background-color: #BA7A3A;
+    width: 85px;
+    min-width: 85px;
+    max-width: 85px;
+    height: 85px;
+    min-height: 85px;
+    max-height: 85px;
+    text-align: center;
+    border-color: black;
+}
+
+#board .noPieceHere{
+    background-color: #F0D2B4;
+}
+#board table{
+    border: 5px solid rgb(0, 0, 0);
+    
+}
+
+.botPiece{
+    width: 20px;
+    height: 20px;
+    padding: 26px;
+    margin: auto;
+    background-color: rgb(34, 33, 33);
+    border: 5px solid rgb(177, 177, 177);
+    border-radius: 50px;
+}
+
+.playerPiece{
+    width: 20px;
+    height: 20px;
+    padding: 26px;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    border: 5px solid rgb(41, 26, 26);
+    border-radius: 50px;
+}
+
+.game-container{
+    width: 100%;
+    height: 300px;
+    border-style: solid;
+    border-color: red;
+}
+
+.turnStatus{
+    font-size: 2rem;
+}
+
+.bot-piecesCount-display{
+    margin-top: 30px;
+    font-size: 1.6rem;
+}
+
+.player-piecesCount-display{
+    font-size: 1.6rem;
+}
