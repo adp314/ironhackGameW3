@@ -22,6 +22,10 @@ let redScore = 12;
 let blackScore = 12;
 let playerPieces;
 
+document.getElementById("blackScore").innerText = `Black player pieces : ${blackScore}`;
+document.getElementById("redScore").innerText = `Red player pieces : ${redScore}`;
+
+
 ///////////////////////
 
 
@@ -200,6 +204,8 @@ function checkAvailableJumpSpaces() {
     checkPieceConditions();
 }
 
+// check conditions para dar o style border verde a as peças que se pode mover e não em todas 
+// (ao king também porque senão o jogador quando passar uma peça em king já não tem a border function)
 
 function checkPieceConditions() {
     if (selectedPiece.isKing) {
@@ -220,6 +226,7 @@ function checkPieceConditions() {
     }
 }
 
+// border green quando uma peça pode mexer (se um dos objectos são true)
 
 function givePieceBorder() {
     if (selectedPiece.seventhSpace || selectedPiece.ninthSpace || selectedPiece.fourteenthSpace || selectedPiece.eighteenthSpace
@@ -230,6 +237,8 @@ function givePieceBorder() {
         return;
     }
 }
+
+// quando vou clicar na cell para onde quero meter a peça, ele vai ao onclick executar a function makeMove
 
 function giveCellsClick() {
     if (selectedPiece.seventhSpace) {
@@ -258,13 +267,16 @@ function giveCellsClick() {
     }
 }
 
+// function para remover a peça da cell antiga e meter na cells onde cliquei
 
 function makeMove(number) {
+
     document.getElementById(selectedPiece.pieceId).remove();
     cells[selectedPiece.indexOfBoardPiece].innerHTML = "";
+
     if (turn) {
         if (selectedPiece.isKing) {
-            cells[selectedPiece.indexOfBoardPiece + number].innerHTML = `<div class="red-piece-king" id="${selectedPiece.pieceId}"></div>`;
+            cells[selectedPiece.indexOfBoardPiece + number].innerHTML = `<div class="red-piece king" id="${selectedPiece.pieceId}"></div>`;
             redsPieces = document.querySelectorAll(".red-piece");
         } else {
             cells[selectedPiece.indexOfBoardPiece + number].innerHTML = `<div class="red-piece" id="${selectedPiece.pieceId}"></div>`;
@@ -272,7 +284,7 @@ function makeMove(number) {
         }
     } else {
         if (selectedPiece.isKing) {
-            cells[selectedPiece.indexOfBoardPiece + number].innerHTML = `<div class="black-piece-king" id="${selectedPiece.pieceId}"></div>`;
+            cells[selectedPiece.indexOfBoardPiece + number].innerHTML = `<div class="black-piece king" id="${selectedPiece.pieceId}"></div>`;
             blacksPieces = document.querySelectorAll(".black-piece");
         } else {
             cells[selectedPiece.indexOfBoardPiece + number].innerHTML = `<div class="black-piece" id="${selectedPiece.pieceId}"></div>`;
@@ -290,23 +302,28 @@ function makeMove(number) {
 
 
 function changeData(indexOfBoardPiece, IndexUpdated, removePiece) {
+
     board[indexOfBoardPiece] = null;
     board[IndexUpdated] = parseInt(selectedPiece.pieceId);
+
     if (turn && selectedPiece.pieceId < 12 && IndexUpdated >= 57) {
         document.getElementById(selectedPiece.pieceId).classList.add("king")
     }
     if (turn === false && selectedPiece.pieceId >= 12 && IndexUpdated <= 7) {
         document.getElementById(selectedPiece.pieceId).classList.add("king");
     }
+
     if (removePiece) {
         board[removePiece] = null;
         if (turn && selectedPiece.pieceId < 12) {
             cells[removePiece].innerHTML = "";
             blackScore--
+            document.getElementById("blackScore").innerText = `Black player pieces : ${blackScore}`;
         }
         if (turn === false && selectedPiece.pieceId >= 12) {
             cells[removePiece].innerHTML = "";
             redScore--
+            document.getElementById("redScore").innerText = `Red player pieces : ${redScore}`;
         }
     }
     resetSelectedPieceProperties();
@@ -332,13 +349,11 @@ function removeEventListeners() {
 function checkForWin() {
     if (blackScore === 0) {
         for (let i = 0; i < winnerContainer.length; i++) {
-            winnerContainer[i].style.color = "black";
-            winnerContainer[i].textContent = "RED WINS!";
+            winnerContainer[i].textContent = "RED WINS !";
         }
     } else if (redScore === 0) {
         for (let i = 0; i < blackTurntext.length; i++) {            
-            winnerContainer[i].style.color = "black";
-            winnerContainer[i].textContent = "BLACK WINS!";
+            winnerContainer[i].textContent = "BLACK WINS !";
         }
     }
     changePlayerDisplay();
