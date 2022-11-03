@@ -1,50 +1,47 @@
+  
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/style.css"/>
-    
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./assets/style.css"/>
     <title>Spanish Checkers</title>
 </head>
 <body>
-
-    <div id="board">
+       <div id="board">
         <table>
             <tr>
-                <td class="noPieceHere"></td> 
-                <td><div class="botPiece" id="1"></div></td> 
-                <td class="noPieceHere"></td> 
-                <td><div class="botPiece" id="2"></div></td> 
-                <td class="noPieceHere"></td> 
-                <td><div class="botPiece" id="3"></div></td> 
-                <td class="noPieceHere"></td> 
-                <td><div class="botPiece" id="4"></div></td>
+                <td class="noPieceHere"></td>
+                <td><div class="red-piece" id="0"></div></td>
+                <td class="noPieceHere"></td>
+                <td><div class="red-piece" id="1"></div></td>
+                <td class="noPieceHere"></td>
+                <td><div class="red-piece" id="2"></div></td>
+                <td class="noPieceHere"></td>
+                <td><div class="red-piece" id="3"></div></td>
             </tr>
-
             <tr>
-                <td><div class="botPiece" id="5"></div></td>
+                <td><div class="red-piece" id="4"></div></td>
                 <td class="noPieceHere"></td>
-                <td><div class="botPiece" id="6"></div></td>
+                <td><div class="red-piece" id="5"></div></td>
                 <td class="noPieceHere"></td>
-                <td><div class="botPiece" id="7"></div></td>
+                <td><div class="red-piece" id="6"></div></td>
                 <td class="noPieceHere"></td>
-                <td><div class="botPiece" id="8"></div></td>
+                <td><div class="red-piece" id="7"></div></td>
                 <td class="noPieceHere"></td>
             </tr>
-
             <tr>
-                <td class="noPieceHere"></td> 
-                <td><div class="botPiece" id="9"></div></td> 
-                <td class="noPieceHere"></td> 
-                <td> <div class="botPiece" id="10"></div> </td> 
-                <td class="noPieceHere"></td> 
-                <td><div class="botPiece" id="11"></div></td> 
-                <td class="noPieceHere"></td> 
-                <td><div class="botPiece" id="12"></div></td>
+                <td class="noPieceHere"></td>
+                <td><div class="red-piece" id="8"></div></td>
+                <td class="noPieceHere"></td>
+                <td><div class="red-piece" id="9"></div></td>
+                <td class="noPieceHere"></td>
+                <td><div class="red-piece" id="10"></div></td>
+                <td class="noPieceHere"></td>
+                <td><div class="red-piece" id="11"></div></td>
             </tr>
-
             <tr>
                 <td></td>
                 <td class="noPieceHere"></td>
@@ -55,77 +52,66 @@
                 <td></td>
                 <td class="noPieceHere"></td>
             </tr>
-
             <tr>
-                <td class="noPieceHere"></td> 
-                <td></td> 
-                <td class="noPieceHere"></td> 
-                <td></td> 
-                <td class="noPieceHere"></td> 
-                <td></td> 
-                <td class="noPieceHere"></td> 
+                <td class="noPieceHere"></td>
+                <td></td>
+                <td class="noPieceHere"></td>
+                <td></td>
+                <td class="noPieceHere"></td>
+                <td></td>
+                <td class="noPieceHere"></td>
                 <td></td>
             </tr>
-
             <tr>
-                <td><div class="playerPiece" id="13"></div></td>
+                <td><div class="black-piece" id="12"></div></td>
                 <td class="noPieceHere"></td>
-                <td><div class="playerPiece" id="14"></div></td>
+                <td><div class="black-piece" id="13"></div></td>
                 <td class="noPieceHere"></td>
-                <td><div class="playerPiece" id="15"></div></td>
+                <td><div class="black-piece" id="14"></div></td>
                 <td class="noPieceHere"></td>
-                <td><div class="playerPiece" id="16"></div></td>
+                <td><div class="black-piece" id="15"></div></td>
                 <td class="noPieceHere"></td>
             </tr>
-
             <tr>
-                <td class="noPieceHere"></td> 
-                <td><div class="playerPiece" id="17"></div></td> 
-                <td class="noPieceHere"></td> 
-                <td><div class="playerPiece" id="18"></div></td> 
-                <td class="noPieceHere"></td> 
-                <td><div class="playerPiece" id="19"></div></td> 
-                <td class="noPieceHere"></td> 
-                <td><div class="playerPiece" id="20"></div></td>
+                <td class="noPieceHere"></td>
+                <td><div class="black-piece" id="16"></div></td>
+                <td class="noPieceHere"></td>
+                <td><div class="black-piece" id="17"></div></td>
+                <td class="noPieceHere"></td>
+                <td><div class="black-piece" id="18"></div></td>
+                <td class="noPieceHere"></td>
+                <td><div class="black-piece" id="19"></div></td>
             </tr>
-
             <tr>
-                <td><div class="playerPiece" id="21"></div></td>
+                <td><div class="black-piece" id="20"></div></td>
                 <td class="noPieceHere"></td>
-                <td><div class="playerPiece" id="22"></div></td>
+                <td><div class="black-piece" id="21"></div></td>
+                <td class="noPieceHere">
+                <td><div class="black-piece" id="22"></div></td>
                 <td class="noPieceHere"></td>
-                <td><div class="playerPiece" id="23"></div></td>
-                <td class="noPieceHere"></td>
-                <td><div class="playerPiece" id="24"></div></td>
+                <td><div class="black-piece" id="23"></div></td>
                 <td class="noPieceHere"></td>
             </tr>
         </table>
-    </div>
+        </div> 
 
-
-
-
-
-<!-- Game Infos & States section -->
-
-    <div class="right-container">
-        <div class="gameinfos">
+        <div class="right-container">
             <h1>Spanish Checkers</h1>
             <div class="tutorial">
-                <p>Here, you can see the rules of Spanish Checkers</p>
+                <p>a tutorial here for explain the rules of checkers</p>
             </div>
-
-        </div>
+            <div class="winner-container">
+                
+            </div>
             <div class="game-container">
-                    <div class="turnStatus">
-                        <div class="bot-turn">Bot turn</div>
-                        <div class="player-turn">Player turn</div>
-                    
-                    <div class="bot-piecesCount-display">Bot pieces count :<span class="botCount">12</span></div>
-                    <div class="player-piecesCount-display">Player pieces count :<span class="playerCount">12</span></div>
-        </div>
-
-
+                <div class="red-turn-text">
+                    Reds turn
+                </div>
+                <div class="black-turn-text">
+                    Blacks turn
+               
+            </div>
+    </div>
     <script src="./assets/game.js"></script>
     <script src="./assets/script.js"></script>
 </body>
