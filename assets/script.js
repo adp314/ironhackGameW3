@@ -39,16 +39,22 @@ let selectedPiece = {
     minusEighteenthSpace: false
 }
 
+// Faz inicial 1.0 -- obter um integer com os id das peças
+
 let findPiece = function (pieceId) {
     let parsed = parseInt(pieceId);
     return board.indexOf(parsed);
 };
+
+
+// Faz initial 1.1 -- EventListeners para as peças de cada jogador quando é o turn dele
 
 function givePiecesEventListeners() {
     if (turn) {
         for (let i = 0; i < redsPieces.length; i++) {
             redsPieces[i].addEventListener("click", getPlayerPieces);
         }
+       
     } else {
         for (let i = 0; i < blacksPieces.length; i++) {
             blacksPieces[i].addEventListener("click", getPlayerPieces);
@@ -57,21 +63,29 @@ function givePiecesEventListeners() {
 }
 
 
+// Faz initial 1.2 -- function para meter as peça de cada jogador na variavel let playerPieces quando é o turn dele
+
 function getPlayerPieces() {
     if (turn) {
         playerPieces = redsPieces;
+        console.log(playerPieces)
     } else {
         playerPieces = blacksPieces;
+        console.log(playerPieces)
     }
-    removeCellonclick();
+    removeCellonclick(); // para remover o onclick
     resetBorders();
 }
+
+// remove o evento onclick
 
 function removeCellonclick() {
     for (let i = 0; i < cells.length; i++) {
         cells[i].removeAttribute("onclick");
     }
 }
+
+// loop reset borders
 
 function resetBorders() {
     for (let i = 0; i < playerPieces.length; i++) {
@@ -81,6 +95,7 @@ function resetBorders() {
     getSelectedPiece();
 }
 
+// Reset das properties quando se resetar as borders
 
 function resetSelectedPieceProperties() {
     selectedPiece.pieceId = -1;
@@ -96,6 +111,7 @@ function resetSelectedPieceProperties() {
     selectedPiece.minusEighteenthSpace = false;
 }
 
+// Esta function é para dar o id da peça e da cell do click
 
 function getSelectedPiece() {
     selectedPiece.pieceId = parseInt(event.target.id);
@@ -113,6 +129,7 @@ function isPieceKing() {
     getAvailableSpaces();
 }
 
+// Check se em diagonal tem o espaço para a peça ir lá, no fim, eu chamo a próxima function que é para "saltar" se tem uma peça
 
 function getAvailableSpaces() {
     if (board[selectedPiece.indexOfBoardPiece + 7] === null && 
@@ -134,6 +151,7 @@ function getAvailableSpaces() {
     checkAvailableJumpSpaces();
 }
 
+// Mesmo check que na última function, só que aqui vou checkar se as peças a saltar são do lado do adversário & se tem bem uma peça em diagonal
 
 function checkAvailableJumpSpaces() {
     if (turn) {
@@ -240,23 +258,22 @@ function giveCellsClick() {
     }
 }
 
-// mais de 4h para fazer makeMove & changeData RRRRRRRRRRRRIIIPPP MEU DEUS
 
 function makeMove(number) {
     document.getElementById(selectedPiece.pieceId).remove();
     cells[selectedPiece.indexOfBoardPiece].innerHTML = "";
     if (turn) {
         if (selectedPiece.isKing) {
-            cells[selectedPiece.indexOfBoardPiece + number].innerHTML = `<div class="red-piece king" id="${selectedPiece.pieceId}"></div>`;
-            redsPieces = document.querySelectorAll(".red-piece-king");
+            cells[selectedPiece.indexOfBoardPiece + number].innerHTML = `<div class="red-piece-king" id="${selectedPiece.pieceId}"></div>`;
+            redsPieces = document.querySelectorAll(".red-piece");
         } else {
             cells[selectedPiece.indexOfBoardPiece + number].innerHTML = `<div class="red-piece" id="${selectedPiece.pieceId}"></div>`;
             redsPieces = document.querySelectorAll(".red-piece");
         }
     } else {
         if (selectedPiece.isKing) {
-            cells[selectedPiece.indexOfBoardPiece + number].innerHTML = `<div class="black-piece king" id="${selectedPiece.pieceId}"></div>`;
-            blacksPieces = document.querySelectorAll(".black-piece-king");
+            cells[selectedPiece.indexOfBoardPiece + number].innerHTML = `<div class="black-piece-king" id="${selectedPiece.pieceId}"></div>`;
+            blacksPieces = document.querySelectorAll(".black-piece");
         } else {
             cells[selectedPiece.indexOfBoardPiece + number].innerHTML = `<div class="black-piece" id="${selectedPiece.pieceId}"></div>`;
             blacksPieces = document.querySelectorAll(".black-piece");
