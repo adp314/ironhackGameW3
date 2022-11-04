@@ -5,11 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./assets/style.css"/>
-    <title>Spanish Checkers</title>
+    <title>English Checkers</title>
 </head>
 <body>
+    <div class="gameinfos-container">
+        <h1>GAME INFOS</h1>
+        <div class="turn-container">
+            <div class="red-turn-text"> RED PIECES TURN</div>
+            <div class="black-turn-text">BLACK PIECES TURN</div>
+        </div>
+
+        <div class="score-container">
+            <p id="redScore"></p>
+            <br>
+            <p id="blackScore"></p>
+        </div>
+        <div class="winner-container"></div>
+    </div>
+
        <div id="board">
         <table>
             <tr>
@@ -96,28 +110,20 @@
         </div> 
 
         <div class="right-container">
-            <h1>Spanish Checkers</h1>
+
+            <h1>English Checkers</h1>
+
             <div class="tutorial">
-                <p>a tutorial here for explain the rules of checkers</p>
-            </div>
-            <div class="score-container">
-               
-                <p id="redScore"></p>
-          
-                <p id="blackScore"> </p>
-                <div class="winner-container"></div>
-            </div>
-            
-            
-                <div class="red-turn-text">
-                    Reds turn
+                <p>You can only move your piece in diagonal, and you can't back.<br>When you are with a piece in the latest cells in enemy camps your piece switches to a queen.<br>
+                    <br>
+                    The Queen its the same that a piece, but she can move for all diagonals.
+                    <br>
+                    <br>
+                    For win, you need to "eat" all the piece of the opposite color.
                 </div>
-                <div class="black-turn-text">
-                    Blacks turn
-               
+
             </div>
     </div>
-    <script src="./assets/game.js"></script>
     <script src="./assets/script.js"></script>
 </body>
 </html>

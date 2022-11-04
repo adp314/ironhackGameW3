@@ -22,8 +22,8 @@ let redScore = 12;
 let blackScore = 12;
 let playerPieces;
 
-document.getElementById("blackScore").innerText = `Black player pieces : ${blackScore}`;
-document.getElementById("redScore").innerText = `Red player pieces : ${redScore}`;
+document.getElementById("blackScore").innerText = `Black pieces count : ${blackScore}`;
+document.getElementById("redScore").innerText = `Red pieces count : ${redScore}`;
 
 
 ///////////////////////
@@ -300,6 +300,7 @@ function makeMove(number) {
     }
 }
 
+// function para add king a uma peça se ela estiver no fim do board, remove tambem as peça do Score count dos jogadores
 
 function changeData(indexOfBoardPiece, IndexUpdated, removePiece) {
 
@@ -318,12 +319,12 @@ function changeData(indexOfBoardPiece, IndexUpdated, removePiece) {
         if (turn && selectedPiece.pieceId < 12) {
             cells[removePiece].innerHTML = "";
             blackScore--
-            document.getElementById("blackScore").innerText = `Black player pieces : ${blackScore}`;
+            document.getElementById("blackScore").innerText = `Black pieces count : ${blackScore}`;
         }
         if (turn === false && selectedPiece.pieceId >= 12) {
             cells[removePiece].innerHTML = "";
             redScore--
-            document.getElementById("redScore").innerText = `Red player pieces : ${redScore}`;
+            document.getElementById("redScore").innerText = `Red pieces count : ${redScore}`;
         }
     }
     resetSelectedPieceProperties();
@@ -346,32 +347,42 @@ function removeEventListeners() {
     checkForWin();
 }
 
+// function para dar a win
+
 function checkForWin() {
     if (blackScore === 0) {
         for (let i = 0; i < winnerContainer.length; i++) {
-            winnerContainer[i].textContent = "RED WINS !";
+            winnerContainer[i].style.color = "red";
+            winnerContainer[i].textContent = "RED WINS!";
+            winnerContainer[i].style.backgroundColor = "#5335179a";
+            
+
         }
     } else if (redScore === 0) {
         for (let i = 0; i < blackTurntext.length; i++) {            
-            winnerContainer[i].textContent = "BLACK WINS !";
+            winnerContainer[i].style.color = "black";
+            winnerContainer[i].textContent = "BLACK WINS!";
+            winnerContainer[i].style.backgroundColor = "#5335179a";
+            
         }
     }
     changePlayerDisplay();
 }
 
+// function para saber o turn atual
 
 function changePlayerDisplay() {
     if (turn) {
         turn = false;
         for (let i = 0; i < redTurnText.length; i++) {
-            redTurnText[i].style.color = "grey";
-            blackTurntext[i].style.color = "green";
+            redTurnText[i].style.color = "rgba(255, 0, 0, 0.240)";
+            blackTurntext[i].style.color = "black";
         }
     } else {
         turn = true;
         for (let i = 0; i < blackTurntext.length; i++) {
-            blackTurntext[i].style.color = "grey";
-            redTurnText[i].style.color = "green";
+            blackTurntext[i].style.color = "rgba(0, 0, 0, 0.240)";
+            redTurnText[i].style.color = "red";
         }
     }
     givePiecesEventListeners();

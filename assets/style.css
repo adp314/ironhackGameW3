@@ -2,41 +2,61 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 body{
     display: flex;
     flex-direction: row;
-    padding: 100px;
+    padding: 110px;
     background-color: #D9D9D9;
     justify-content: center;
     gap :100px;
+    background-image: url('./5436965.jpg');
+    background-position: center;
+    
     
 }
+
 
 .right-container{
 
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    border: 5px solid #755332;
+    box-shadow: #755332 0px 0px 0px 2px inset, 
+    rgba(255, 255, 255, 0.103) 10px -10px 0px -3px, 
+    #755332 10px -10px, 
+    rgba(255, 255, 255, 0.205) 20px -20px 0px -3px, 
+    #755332 20px -20px, 
+    rgba(255, 255, 255, 0.301) 30px -30px 0px -3px, 
+    #755332 30px -30px, 
+    rgba(255, 255, 255, 0.404) 40px -40px 0px -3px, 
+    #755332 40px -40px;
+    background-color: #F0D2B4;
 }
 
 .right-container h1{
     text-align: center;
     font-size: 2rem;
-    padding: 20px;
+    margin: 15px;
+    padding: 10px;
+    color:white;
+    text-transform: uppercase;
+    background-color: #80522449;
+
+
 }
 .tutorial{
     text-align: center;
-    margin-top: 10px;
-    width: 300px;
-    font-size: 1.2rem;
-    background-color: white;
+    width: 275px;
+    font-size: 1.5rem;
+    background-color: #80522449;
     padding: 20px;
-    border-radius: 3px;
+    color: white;
 }
 
 #board td{
@@ -55,8 +75,17 @@ body{
     background-color: #F0D2B4;
 }
 #board table{
-    border: 5px solid rgb(0, 0, 0);
-    
+    border: 7px solid #755332;
+    border-collapse: collapse;
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px 2px inset, 
+    rgba(255, 255, 255, 0.103) 10px -10px 0px -3px, 
+    #755332 10px -10px, 
+    rgba(255, 255, 255, 0.205) 20px -20px 0px -3px, 
+    #755332 20px -20px, 
+    rgba(255, 255, 255, 0.301) 30px -30px 0px -3px, 
+    #755332 30px -30px, 
+    rgba(255, 255, 255, 0.404) 40px -40px 0px -3px, 
+    #755332 40px -40px;
 }
 
 .red-piece{
@@ -80,23 +109,6 @@ body{
     border-radius: 50px;
 }
 
-.game-container{
-    width: 100%;
-    height: 300px;
-    color: #BA7A3A;
-}
-
-.red-turn-text {
-    font-size: 35px;
-    color: green;
-}
-
-.black-turn-text {
-    font-size: 35px;
-    color: grey;
-}
-
-
 .king.red-piece {
     background-color: orange;
 }
@@ -106,32 +118,75 @@ body{
 }
 
 .score-container{
-    width: 100%;
-    height: 300px;
-    background-color: antiquewhite;
-    color: #BA7A3A;
+    margin-top: 25px;
+    width: 350px;
+    height: 100px;
+    padding: 10px;
+    background-color: #5335179a;
+    align-self: flex-end;
+
 }
 
-.score{
-    color: black;
-    font-size: 1.4rem;
-}
+
 #redScore{
-    color: red;
+    color: white;
     font-size: 1.6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 #blackScore{
-    color: black;
+    color: white;
     font-size: 1.6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
 }
+
 
 .winner-container{
     height: 250px;
-    width: 100%;
-    background-color: #D9D9D9;
+    padding: 10px;
+    margin-top: 25px;
+    width: 350px;
     font-size: 2.5rem;
     text-align: center;
-    padding-top: 30px;
-    color: black;
-    font-weight: 800;
+    font-weight: bold;
+    padding-top: 25%;
+}
+
+
+.turn-container{
+    width: 350px;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    background-color:#5335179a;
+    border-radius: 2px;
+
+}
+
+.red-turn-text{
+    color: red;
+    font-weight: bold;
+}
+
+.black-turn-text{
+    color: rgba(0, 0, 0, 0.247);
+    font-weight: bold;
+}
+
+.gameinfos-container h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-left: 50%;
+    transform: translate(-50%);
+    margin-bottom: 25px;
+    margin-top: 10px;
+    padding: 5px;
+    color:white;
+    width: 150px;
+    text-transform: uppercase;
+    background-color: #5e3c1a67;
+}
