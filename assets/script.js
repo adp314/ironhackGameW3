@@ -17,6 +17,7 @@ const blackTurntext = document.querySelectorAll(".black-turn-text");
 const winnerContainer = document.querySelectorAll(".winner-container");
 let redsPieces = document.querySelectorAll(".red-piece");
 let blacksPieces = document.querySelectorAll(".black-piece")
+
 let turn = true;
 let redScore = 12;
 let blackScore = 12;
@@ -24,9 +25,6 @@ let playerPieces;
 
 document.getElementById("blackScore").innerText = `Black pieces count : ${blackScore}`;
 document.getElementById("redScore").innerText = `Red pieces count : ${redScore}`;
-
-
-///////////////////////
 
 
 let selectedPiece = {
@@ -67,7 +65,7 @@ function givePiecesEventListeners() {
 }
 
 
-// Faz initial 1.2 -- function para meter as peça de cada jogador na variavel let playerPieces quando é o turn dele
+// Faz initial 1.2 -- function para meter as peça de cada jogador na variável let playerPieces quando é o turn dele
 
 function getPlayerPieces() {
     if (turn) {
@@ -93,7 +91,7 @@ function removeCellonclick() {
 
 function resetBorders() {
     for (let i = 0; i < playerPieces.length; i++) {
-        playerPieces[i].style.border = "3px solid white #b8b8b8";
+        playerPieces[i].style.border = "3px solid grey ";
     }
     resetSelectedPieceProperties();
     getSelectedPiece();
@@ -155,7 +153,7 @@ function getAvailableSpaces() {
     checkAvailableJumpSpaces();
 }
 
-// Mesmo check que na última function, só que aqui vou checkar se as peças a saltar são do lado do adversário & se tem bem uma peça em diagonal
+// Mesmo check que na última function, só que aqui vou checkar se as peças a saltar são do lado do adversário & se tem bem uma peça na mesma diagonal do salto
 
 function checkAvailableJumpSpaces() {
     if (turn) {
@@ -204,8 +202,8 @@ function checkAvailableJumpSpaces() {
     checkPieceConditions();
 }
 
-// check conditions para dar o style border verde a as peças que se pode mover e não em todas 
-// (ao king também porque senão o jogador quando passar uma peça em king já não tem a border function)
+// check conditions para dar o style border verde a as peças que se pode mover e não em todas.
+// quand uma peça é king, pde sempre ter as borders verdes. ( ele é king ahahahah)
 
 function checkPieceConditions() {
     if (selectedPiece.isKing) {
@@ -267,7 +265,8 @@ function giveCellsClick() {
     }
 }
 
-// function para remover a peça da cell antiga e meter na cells onde cliquei
+// function para remover a peça da cell antiga e meter a "nova" na cells onde cliquei.
+// se for king true, mete uma peça com div king
 
 function makeMove(number) {
 
@@ -300,7 +299,8 @@ function makeMove(number) {
     }
 }
 
-// function para add king a uma peça se ela estiver no fim do board, remove tambem as peça do Score count dos jogadores
+// function para add classList king a uma "peça" (div class) se ela estiver no fim do board
+// remove tambem as peça do score count dosjogadores
 
 function changeData(indexOfBoardPiece, IndexUpdated, removePiece) {
 
@@ -332,7 +332,7 @@ function changeData(indexOfBoardPiece, IndexUpdated, removePiece) {
     removeEventListeners();
 }
 
-///
+// function para tirar o EventListeners "click" das peças do adversario quand é o meu
 
 function removeEventListeners() {
     if (turn) {
@@ -369,7 +369,7 @@ function checkForWin() {
     changePlayerDisplay();
 }
 
-// function para saber o turn atual
+// function para display o turn de quem joga ao jogador
 
 function changePlayerDisplay() {
     if (turn) {

@@ -94,7 +94,7 @@ body{
     padding: 26px;
     margin: auto;
     background-color: rgb(121, 16, 16);
-    border: 3px solid #b8b8b8;
+    border: 3px solid grey;
     border-radius: 50px;
 }
 
@@ -105,7 +105,7 @@ body{
     margin: auto;
     background-color: rgb(39, 39, 39);
     
-    border: 3px solid #b8b8b8;
+    border: 3px solid grey;
     border-radius: 50px;
 }
 
@@ -120,11 +120,11 @@ body{
 .score-container{
     margin-top: 25px;
     width: 350px;
-    height: 100px;
-    padding: 10px;
-    background-color: #5335179a;
+    height: 110px;
+    padding: 13px;
+    background-color: #997046ad;
     align-self: flex-end;
-
+    border-radius: 8px;
 }
 
 
@@ -142,18 +142,20 @@ body{
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
+    
 }
 
 
 .winner-container{
     height: 250px;
-    padding: 10px;
+    padding: 20px;
     margin-top: 25px;
     width: 350px;
     font-size: 2.5rem;
     text-align: center;
     font-weight: bold;
     padding-top: 25%;
+    border-radius: 8px;
 }
 
 
@@ -161,9 +163,10 @@ body{
     width: 350px;
     color: white;
     font-size: 2rem;
+    padding: 10px;
     text-align: center;
-    background-color:#5335179a;
-    border-radius: 2px;
+    background-color:#997046ad;
+    border-radius: 8px;
 
 }
 
@@ -188,5 +191,6 @@ body{
     color:white;
     width: 150px;
     text-transform: uppercase;
-    background-color: #5e3c1a67;
+    background-color: #997046ad;
+    border-radius: 8px;
 }
